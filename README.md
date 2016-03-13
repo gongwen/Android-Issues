@@ -13,11 +13,7 @@
                         View child = getChildAt(i);
                         child.measure(widthMeasureSpec, MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
                         int h = child.getMeasuredHeight();
-                        if (i == 0) {
-                                if (h > mHeight)
-                                mHeight = h;
-                        } else {
-                                if (h > mHeight)
+                        if (h > mHeight){
                                 mHeight = h;
                         }
                 }
