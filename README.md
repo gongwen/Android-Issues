@@ -26,7 +26,9 @@
         Meanwhile the definition of getFragmentManager() (or in this case getSupportFragmentManager()) is:
                 Return the FragmentManager for interacting with fragments associated with this fragment's activity.
 
-        Basically, the difference is that Fragment's now have their own internal FragmentManager that can handle Fragments. The child         FragmentManager is the one that handles Fragments contained within only the Fragment that it was added to. The other                  FragmentManager is contained within the entire Activity.
+        Basically, the difference is that Fragment's now have their own internal FragmentManager that can handle Fragments.
+        The child FragmentManager is the one that handles Fragments contained within only the Fragment that it was added to. 
+        The other FragmentManager is contained within the entire Activity.
 
         In this case, what I'm guessing is you've added the Fragments to the Activity's FragmentManager. You get the child                    FragmentManager which doesn't contain what you are looking for. Thus you get the exception because it can't find the Fragment         with the given ID because it's in a different FragmentManager.
 
